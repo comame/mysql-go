@@ -17,7 +17,7 @@ type envType struct {
 	Host     string `env:"MYSQL_HOST"`
 }
 
-var connections map[string]*sql.DB
+var connections = make(map[string]*sql.DB)
 
 func Initialize() (err error) {
 	defer func() {
